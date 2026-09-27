@@ -112,6 +112,16 @@ Como as variáveis `V1` a `V28` foram transformadas por PCA, não é possível a
 3. O dataset será baixado automaticamente pelo KaggleHub.
 4. Os modelos serão treinados e avaliados durante a execução.
 
+## Diferenças em Relação à Abordagem da Expert
+
+O projeto seguiu o pipeline apresentado pela Expert como referência, mas algumas decisões foram adaptadas durante o desenvolvimento.
+
+Foi criada a variável `Amount_Log` para representar o valor das transações em escala logarítmica e a padronização foi realizada somente após a separação entre treino e teste, ajustando o `StandardScaler` exclusivamente nos dados de treinamento para evitar vazamento de dados.
+
+Também foram comparados diferentes limiares de decisão para o XGBoost. Neste projeto foi escolhido o limiar de 0,3, priorizando o aumento do recall da classe fraude.
+
+Técnicas de undersampling e oversampling não foram implementadas nesta versão e ficam como possibilidades de evolução do projeto.
+
 ## Conclusão
 
 O projeto demonstra a importância de utilizar métricas adequadas em problemas de classificação com dados fortemente desbalanceados.
